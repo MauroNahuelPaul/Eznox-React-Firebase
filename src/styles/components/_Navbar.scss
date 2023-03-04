@@ -1,0 +1,34 @@
+.header {
+    background-color: $primary-color;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    &__title {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+        h1 {
+            font-family: $primary-font-style;
+            color: $font-color;
+            font-size: 4rem;
+        }
+    }
+
+    &__container {
+
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+
+            &__link {
+                font-family: $secondary-font-style;
+                color: $font-color;
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+}
