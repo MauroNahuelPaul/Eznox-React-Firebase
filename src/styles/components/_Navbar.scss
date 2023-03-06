@@ -7,7 +7,8 @@
     &__title {
         display: flex;
         justify-content: center;
-        margin-bottom: 30px;
+        margin-bottom: 50px;
+
         h1 {
             font-family: $primary-font-style;
             color: $font-color;
@@ -16,8 +17,6 @@
     }
 
     &__container {
-
-
         .navbar {
             display: flex;
             justify-content: center;
@@ -27,6 +26,12 @@
                 font-family: $secondary-font-style;
                 color: $font-color;
                 font-size: 1.5rem;
+
+                &:hover {
+                    cursor: pointer;
+                    color: $secondary-color;
+                    transition: 0.5s;
+                }
             }
         }
     }

@@ -1,15 +1,19 @@
-import libro from './Libro.jpg'
-export const Nosotros = () => {
-    return(
-        <div>
-            <h2>NOSOTROS</h2>
-            <div>
-                <img src={libro} alt="Libro"/>
-            </div>
-            <div>
-                <h3>Libros encuadernados. Infinidad de oportunidades.</h3>
-                <p>Entra en un mundo de palabras y oraciones, visuales e información. </p>
+
+export const Nosotros = ({ titulo, img, tituloSec, texto }) => {
+    return (
+        <div className="nosotros">
+            <h2>{titulo}</h2>
+            <div className="container-recuadro">
+                <div className="recuadro">
+                    <div className="recuadro__img">
+                        <img src={img} alt="Libro" />
+                    </div>
+                    <div className="recuadro__texto">
+                        <h3>{tituloSec}.</h3>
+                        <p>{texto}</p>
+                    </div>
+                </div>
             </div>
         </div>
-        )
+    )
 }
