@@ -9,7 +9,7 @@ export const Nosotros = ({ titulo, img, tituloSec, texto }) => {
                         <img src={img} alt="Libro" />
                     </div>
                     <div className="recuadro__texto">
-                        <h3>{tituloSec}.</h3>
+                        <h3>{tituloSec}</h3>
                         <p>{texto}</p>
                     </div>
                 </div>
