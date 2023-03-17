@@ -1,24 +1,47 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-ul,ol {
+ul,
+ol {
     list-style: none;
     padding: 0px;
     margin: 0px;
 }
 
-a,i {
+a,
+i {
     text-decoration: none;
     color: $font-color;
+
     &visited {
         color: $font-color;
     }
 }
-main{
+
+body {
     background-color: $secondary-color;
 }
 
+.apartado-container {
+    display: flex;
+    justify-content: center;
+    >.apartado {
+        margin-top: 20px;
+        width: 1300px;
+        border-radius: 15px;
+        border: 1px solid #FFFFFF;
+        
+        >h1{
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin-left: 10px;
+            font-family: $secondary-font-style;
+            color: #FFFFFF;
+            font-size: 3rem;
+            font-weight: 100;
+        }
+    }
+}
