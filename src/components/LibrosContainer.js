@@ -1,7 +1,7 @@
 import { Libro } from "./Libro"
 
 export const LibrosContainer = ({ libros }) => {
-    console.log(libros)
+    
     return (
 
         <div className='librosContainer'>

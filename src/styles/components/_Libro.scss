@@ -1,0 +1,28 @@
+.libro {
+    width: 300px;
+    height: 450px;
+    margin-top: 40px;
+
+    justify-content: space-around;
+    
+
+    >img {
+        width: 300px;
+        height: 450;
+        border: 2px solid white;
+        transition-duration: 0.5s;
+        &:hover {
+            border: 5px solid $primary-color;
+        }
+    }
+
+    
+
+    >h3 {
+        position: absolute;
+    }
+
+    >p {
+        position: absolute;
+    }
+}

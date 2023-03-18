@@ -8,12 +8,10 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <main>
-
-      </main>
       <Routes>
         <Route path="/" element={<Nosotros />} />
         <Route path="/explorar" element={<Explorar />} />
+        <Route path='/explorar/categoria/:genero' element={ <Explorar /> }/>
         {/* <Route path="/biblioteca" element={}/> */}
         {/* <Route path="/cuenta" element={}/> */}
         {/* <Route path="/ayuda" element={}/> */}

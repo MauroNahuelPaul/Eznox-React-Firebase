@@ -1,0 +1,10 @@
+.librosContainer{
+    display: grid;
+    grid-template-columns: repeat(3,300px);
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 60px;
+    justify-content: center;
+
+    gap: 33.3px;
+}

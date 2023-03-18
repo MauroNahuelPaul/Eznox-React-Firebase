@@ -3,7 +3,7 @@ export const Libro = ({ libro }) => {
         <div className='libro'>
             <h3>{libro.titulo}</h3>
             <img src={libro.img} alt={libro.nombre} />
-            <p>genero: {libro.genero}</p>
+            <p>Genero: {libro.genero}</p>
             {/* <Link to={`/detail/${libro.id}`} className='btn btn-primary'>Ver más</Link> */}
         </div>
     )
