@@ -1,0 +1,56 @@
+.libroDetalle {
+    display: flex;
+    width: 1300px;
+    margin: 60px auto;
+    justify-content: space-around;
+    color: white;
+    font-family: $secondary-font-style;
+
+    >.img {
+        width: 400px;
+    }
+    >div{
+        width: 600px;
+
+    }
+    >div>.titulo {
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: 50px;
+        font-family: $primary-font-style;
+        font-weight: 600;
+    }
+
+    >div>.sinopsis {
+        font-size: 1.7rem;
+        margin-bottom: 50px;
+    }
+
+    >div>.autor {
+        font-size: 2rem;
+        margin-bottom: 50px;
+        font-weight: 400;
+    }
+
+    >div>.año {
+        font-size: 2rem;
+        margin-bottom: 50px;
+    }
+
+    >div>.genero {
+        font-size: 2rem;
+        margin-bottom: 50px;
+    }
+    >div>bottom {
+        font-size: 2rem;
+        padding: 10px;
+        border-radius: 15px;
+        background-color: $primary-color;
+        transition: 0.5s;
+        border: 2px solid white;
+        &:hover{
+            background-color: $tercer-color;
+            cursor: pointer;
+        }
+    }
+}

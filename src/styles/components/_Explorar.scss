@@ -3,12 +3,14 @@
     margin: 40px auto;
     display: flex;
     justify-content:space-around;
+    
     .genero-select{
         padding: 20px 30px 20px 30px;
         background-color: $primary-color;
         border-radius:15px;
         font-size: 1.1rem;
-        transition: 1s;
+        transition: 0.5s;
+        border: 2px solid white;
         &:hover{
             background-color: $tercer-color;
         }

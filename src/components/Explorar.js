@@ -32,7 +32,7 @@ export const Explorar = () => {
         <main className="mainExplorar">
             <div className="apartado-container">
                 <div className="apartado">
-                    <h1 className="">EN<br />COLLECCIÓN</h1>
+                    <h1 className="">EXPLORAR</h1>
                 </div>
             </div>
             <div className="genero-container">
