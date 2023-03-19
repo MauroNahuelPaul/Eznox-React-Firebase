@@ -13,7 +13,7 @@ export const Explorar = () => {
         console.log(genero)
         traerDatos()
             .then((res) => {
-                if (genero!=undefined) {
+                if (genero!==undefined) {
                     setLibros(res.filter((libro) => libro.genero === genero))
                 } else {
                     setLibros(res)
