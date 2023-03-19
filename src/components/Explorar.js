@@ -7,13 +7,17 @@ export const Explorar = () => {
     const [libros, setLibros] = useState([])
     const [loading, setLoading] = useState(true)
     const { genero } = useParams()
-    console.log(genero)
+    
     useEffect(() => {
         setLoading(true)
-
+        console.log(genero)
         traerDatos()
             .then((res) => {
-                setLibros(res)
+                if (genero!=undefined) {
+                    setLibros(res.filter((libro) => libro.genero === genero))
+                } else {
+                    setLibros(res)
+                }
             })
             .catch((error) => {
                 console.log(error)
@@ -22,7 +26,7 @@ export const Explorar = () => {
             .finally(() => {
                 setLoading(false)
             })
-    },[])
+    }, [genero])
 
     return (
         <main className="mainExplorar">
@@ -31,7 +35,7 @@ export const Explorar = () => {
                     <h1 className="">EN<br />COLLECCIÓN</h1>
                 </div>
             </div>
-            <div className="">
+            <div className="genero-container">
                 <Link to='/explorar/' className="genero-select">Todos</Link>
                 <Link to='/explorar/categoria/Romance' className="genero-select">Romance</Link>
                 <Link to='/explorar/categoria/Accion' className="genero-select">Acción</Link>
