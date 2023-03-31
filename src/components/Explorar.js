@@ -1,27 +1,31 @@
 import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
-import { traerDatos } from "../helpers/traerDatos"
 import { LibrosContainer } from "./LibrosContainer"
+import { Loader } from "./Loader"
+import { collection, getDocs, query, where } from "firebase/firestore"
+import { db } from "../firebase/config"
 
 export const Explorar = () => {
     const [libros, setLibros] = useState([])
     const [loading, setLoading] = useState(true)
     const { genero } = useParams()
-    
+
     useEffect(() => {
         setLoading(true)
-        console.log(genero)
-        traerDatos()
+        //armar una referencia (sync)
+        const librosRef = collection(db, "libros")
+        const q = genero
+            ? query(librosRef, where("genero", "==", genero))
+            : librosRef
+        //llamar a la referencia(async)
+        getDocs(q)
             .then((res) => {
-                if (genero!==undefined) {
-                    setLibros(res.filter((libro) => libro.genero === genero))
-                } else {
-                    setLibros(res)
-                }
-            })
-            .catch((error) => {
-                console.log(error)
-
+                setLibros(res.docs.map((doc) => {
+                    return {
+                        id: doc.id,
+                        ...doc.data()
+                    }
+                }))
             })
             .finally(() => {
                 setLoading(false)
@@ -46,7 +50,7 @@ export const Explorar = () => {
 
             {
                 loading
-                    ? <h2>Cargando...</h2>
+                    ? <Loader/>
                     : <LibrosContainer libros={libros} />
             }
 

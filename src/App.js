@@ -13,7 +13,7 @@ function App() {
         <Route path="/" element={<Nosotros />} />
         <Route path="/explorar" element={<Explorar />} />
         <Route path='/explorar/categoria/:genero' element={<Explorar />} />
-        <Route path='/detalle/:titulo' element={<DettalleLibroContainer /> } />
+        <Route path='/detalle/:id' element={<DettalleLibroContainer /> } />
           {/* <Route path="/biblioteca" element={}/> */}
           {/* <Route path="/cuenta" element={}/> */}
           {/* <Route path="/ayuda" element={}/> */}
