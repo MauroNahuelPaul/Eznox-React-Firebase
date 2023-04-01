@@ -9,7 +9,7 @@ export const DetalleLibro = ({ libro }) => {
                 <h3 className="autor">Autor: {libro.autor}</h3>
                 <p className="año">Años: {libro.año}</p>
                 <p className="genero">Genero: {libro.genero}</p>
-                <bottom>Comprar</bottom>
+                <bottom>Adquerir</bottom>
             </div>
 
         </div>

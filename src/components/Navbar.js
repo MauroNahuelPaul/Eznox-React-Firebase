@@ -8,7 +8,7 @@ export const Navbar = () => {
 
             <nav className="header__container">
                 <ul className="navbar">
-                    <li className="navbar__link"><Link to="./">INICIO</Link>  </li>
+                    <li className="navbar__link"><Link to="./">INICIO</Link></li>
                     <li className="navbar__link"><Link to="./explorar">EXPLORAR</Link></li>
                     <li className="navbar__link"><Link to="./biblioteca">BIBLIOTECA</Link></li>
                     <li className="navbar__link"><Link to="./cuenta">CUENTA</Link></li>

@@ -1,9 +1,10 @@
 import { useContext, useState } from 'react'
 import { LoginContext } from '../context/LoginContext'
+import { Link } from 'react-router-dom'
 // import './LoginScreen.scss'
 
 const LoginScreen = () => {
-    const { login } = useContext(LoginContext)
+    const { user, login } = useContext(LoginContext)
 
     const [values, setValues] = useState({
         email: '',
@@ -22,37 +23,48 @@ const LoginScreen = () => {
 
         login(values)
     }
-    
-    return (
-        <div className="login-container">
-            <div className="login">
-                <h2>Ingresar</h2>
-                <hr/>
+    if (!user.logged) {
+        return (
+            <div className="">
+                <div className="formulario-ingreso">
+                    <div className="recuadro__apartado">
+                        <h2 className="apartado">Iniciar sesión</h2>
+                    </div>
+                    <form onSubmit={handleSubmit}>
+                        <div className='formulario-ingreso__datos'>
+                            <input
+                                onChange={handleChange}
+                                name="email"
+                                value={values.email}
+                                type={'email'}
+                                className="formulario__input"
+                                placeholder='Correo electrónico'
+                            />
 
-                <form onSubmit={handleSubmit}>
-                    <input 
-                        onChange={handleChange}
-                        name="email"
-                        value={values.email}
-                        type={'email'}
-                        className="form-email"
-                        placeholder='Correo electrónico'
-                    />
-
-                    <input 
-                        name="password"
-                        value={values.password}
-                        onChange={handleChange}
-                        type={'password'}
-                        className="form-pass"
-                        placeholder='Contraseña'
-                    />
-
-                    <button className='form-boton' type='submit'>Ingresar</button>
-                </form>
+                            <input
+                                name="password"
+                                value={values.password}
+                                onChange={handleChange}
+                                type={'password'}
+                                className="formulario__input"
+                                placeholder='Contraseña'
+                            />
+                        </div>
+                        <div className="formulario-ingreso__direcciones">
+                            <ul>
+                                <li className=""><Link className="">¿Olvidaste tu contraseña?</Link></li>
+                                <li className=""><Link className="">¿No tienes cuenta?</Link></li>
+                            </ul>
+                        </div>
+                        <button className="" type="submit">Iniciar sesión</button>
+                    </form>
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
+    else {
+        return (<h2>Hola</h2>)
+    }
 }
 
 export default LoginScreen

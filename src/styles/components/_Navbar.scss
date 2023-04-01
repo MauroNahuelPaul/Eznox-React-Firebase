@@ -12,8 +12,7 @@
         h1 {
             font-family: $primary-font-style;
             color: $font-color;
-            font-size: 5rem;
-            
+            font-size: 5rem;  
         }
     }
 
@@ -28,12 +27,10 @@
                 color: $font-color;
                 font-size: 1.2rem;
                 font-weight: 100;
-                
-
-                &:hover {
+                a:hover {
+                    transition: 0.5s;
                     cursor: pointer;
                     color: $secondary-color;
-                    transition: 0.5s;
                 }
             }
         }

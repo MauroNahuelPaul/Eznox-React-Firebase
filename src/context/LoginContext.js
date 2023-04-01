@@ -41,7 +41,7 @@ export const LoginProvider = ({ children }) => {
         }
         else {
             StartToastifyInstance({
-                text: "Los datos ingresados son ingresados",
+                text: "Los datos ingresados son inválidos",
                 duration: 3000,
                 close: true,
                 gravity: "top", // `top` or `bottom`

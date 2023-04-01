@@ -1,48 +1,63 @@
-.login-container {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: $secondary-color;
-
-    .login {
-        width: 600px;
-        height: 500px;
-        padding: 20px;
-        background-color: $primary-color;
-        border-radius: 20px;
-
-        >h2 {
-            text-align: center;
+.formulario-ingreso {
+    margin: 200px auto;
+    width: 50%;
+    >.recuadro__apartado {
+        border-bottom: 1px solid white;
+        >.apartado {
+            margin-bottom:10px;
+            margin-left: 15px;
             font-family: $primary-font-style;
             font-size: 3rem;
             color: white;
-            margin-bottom: 15px;
+            font-weight: 200;
         }
-        >form{
-            height: 80%;
-            padding-top: 50px;
-            >.form-email,>.form-pass,>.form-boton{
-                font-size: 1.2rem;
-                padding-left: 10px;
-                margin: 0 auto;
-                margin-bottom: 60px;
-                display: block;
-                height: 15%;
-                width: 80%;
-                border-radius: 15px;
-                transition: 0.5s;
-                outline: none;
+    }
+
+    >form {
+        >.formulario-ingreso__datos{
+            >.formulario__input{
+                width: 100%;
+                margin-top: 50px;
+                height: 45px;
+                font-size: 1.15rem;
+                padding-left: 15px;
+                color: black;
                 &:focus{
-                    background-color: $tercer-color;
+                    transition: 1s;
+                    outline: none;
+                    border-radius: 20px;
+                    background-color: $primary-color;
+                    color: white;
                 }
             }
-            >.form-boton{
-                width: 20%;
-                padding: 0px;
-            }
-            margin: 0;
         }
+        >.formulario-ingreso__direcciones{
+            margin-top: 25px;
+            >ul{
+                >li{
+                    margin-top: 10px;
+                    margin-left: 5px;
+                    font-size: 1.2rem;
+                    >a:hover{
+                        color:$primary-color;
+                        transition: 1s;
+                    }
+                }
+            }
+        }
+        >button{
+            margin-top: 45px;
+            width: 150px;
+            height: 45px;
+            font-size: 1.25rem;
+            font-family: $primary-font-style;
+            font-weight: 200;
+            &:hover{
+                background-color:$primary-color;
+                transition: 1s;
+                color: white;
+            }
+        }
+
     }
 }
