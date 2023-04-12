@@ -1,12 +1,53 @@
 .nosotros {
     display: inline;
+
     h2 {
         text-align: center;
         color: $font-color;
         padding-top: 40px;
         padding-bottom: 40px;
         font-size: 3rem;
+        font-family: $secondary-font-style;
+        font-weight: 300;
     }
 
-    
+
+}
+
+.irCuentaContainer {
+    border-radius: 20px;
+    background-color: $primary-color;
+    width: 1400px;
+    height: 600px;
+    margin: 0 auto;
+
+    &__texto {
+        color: white;
+        font-size: 3rem;
+        margin: 0 auto;
+        padding-top: 120px;
+        width: 70%;
+        text-align: center;
+    }
+    >a{
+            
+        >div{
+            margin: 90px auto;
+            width: 70%;
+            height: 100px;  
+            background-color: $secondary-color;
+            border-radius: 20px;
+            >p{
+                text-align: center;
+                padding-top: 20px;
+                font-size: 3rem;
+            }
+            &:hover{
+                transition: 0.5s;
+                background-color: $tercer-color;
+            }
+        }
+    }
+
+
 }

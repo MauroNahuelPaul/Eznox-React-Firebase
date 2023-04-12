@@ -20,7 +20,6 @@ const LoginScreen = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-
         login(values)
     }
     if (!user.logged) {
