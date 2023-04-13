@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom"
-import LoginScreen from "../components/LoginScreen"
+import Cuenta from "../components/Cuenta"
 import { Nosotros } from "../components/Nosotros"
 import { Navbar } from "../components/Navbar"
 import { Footer } from "../components/Footer"
@@ -11,7 +11,7 @@ export const PublicRoutes = () => {
         <Navbar />
         <Routes>
             <Route path="/" element={<Nosotros />} />
-            <Route path='/login' element={<LoginScreen />} />
+            <Route path='/login' element={<Cuenta />} />
             <Route path='*' element={<Navigate to={"/login"} />} />
         </Routes>
         <Footer/>
