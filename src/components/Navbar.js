@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom"
+
 export const Navbar = () => {
+    
     return (
+        
         <header className="header">
             <div className="header__title">
                 <h1 >E Z N O X</h1>
             </div>
+            
 
             <nav className="header__container">
                 <ul className="navbar">

@@ -2,23 +2,13 @@ import { useContext } from 'react'
 import { LoginContext } from '../context/LoginContext'
 import { Link } from 'react-router-dom'
 import { Formik } from 'formik'
-import * as Yup from 'yup'
 export const CuentaLogin = () => {
     const { login } = useContext(LoginContext)
 
     const Login = async (values) => {
         login(values)
     }
-    const schema = Yup.object().shape({
-        email: Yup.string()
-            .required("Este campo es requerido")
-            .min(5, "Mínimo 5 caracteres")
-            .max(30, "Máximo 30 caracteres"),
-        password: Yup.string()
-            .required("Este campo es requerido")
-            .min(3, "Mínimo 3 caracteres")
-            .max(30, "Máximo 30 caracteres"),
-    })
+   
 
     return (
         <div className="formulario-ingreso">
@@ -26,7 +16,6 @@ export const CuentaLogin = () => {
                 <h2 className="apartado">Iniciar sesión</h2>
             </div>
             <Formik
-                validationSchema={schema}
                 initialValues={{
                     email: '',
                     password: ''

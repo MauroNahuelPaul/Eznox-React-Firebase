@@ -9,7 +9,17 @@ export const LoginContext = createContext()
 
 
 export const LoginProvider = ({ children }) => {
-
+    const [user, setUser] = useState({
+        id:'',
+        nombre: '',
+        apellido: '',
+        email: '',
+        contraseña: '',
+        confirmarContraseña: '',
+        fechaNacimiento: '',
+        sexo: '',
+        logged: false
+    })
     const [loading, setLoading] = useState(true)
     const [usuarios, setUsuarios] = useState()
 
@@ -18,6 +28,7 @@ export const LoginProvider = ({ children }) => {
         getDocs(usuarioRef)
             .then((res) => {
                 setUsuarios(res.docs.map((doc) => doc.data()))
+                console.log(res.docs.map((doc) => doc))
             })
             .finally(() => {
                 setLoading(false)
@@ -25,19 +36,20 @@ export const LoginProvider = ({ children }) => {
     }, [loading])
 
 
-    const [user, setUser] = useState({
-        email: 'admin@coder.com',
-        logged: false
-    })
+
 
     const login = (values) => {
-        const match = usuarios.find((user) => user.email === values.email && user.contraseña === values.password)
-
+        const match = usuarios.find((doc) => doc.data.email === values.email && doc.data.contraseña === values.password)
         if (match) {
             setUser({
-                email: match.email,
+                id: match.id,
+                email: match.data.email,
                 logged: true
+
             })
+
+
+
         }
         else {
             StartToastifyInstance({
@@ -52,6 +64,7 @@ export const LoginProvider = ({ children }) => {
                 },
             }).showToast();
         }
+
     }
 
     const logout = () => {

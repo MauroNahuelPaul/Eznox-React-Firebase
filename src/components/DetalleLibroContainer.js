@@ -33,7 +33,7 @@ export const DettalleLibroContainer = () => {
             {
                 loading
                     ? <Loader/>
-                    : <DetalleLibro libro={libro} />
+                    : <DetalleLibro libro={libro} id={id}/>
             }
         </div>
     )

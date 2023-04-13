@@ -1,4 +1,7 @@
-export const DetalleLibro = ({ libro }) => {
+export const DetalleLibro = ({ libro, id }) => {
+    function agregarLibroCarito() {
+        console(id)
+    }
     return (
         <div className="libroDetalle">
 
@@ -9,7 +12,7 @@ export const DetalleLibro = ({ libro }) => {
                 <h3 className="autor">Autor: {libro.autor}</h3>
                 <p className="año">Años: {libro.año}</p>
                 <p className="genero">Genero: {libro.genero}</p>
-                <bottom>Adquerir</bottom>
+                <bottom onClick={ agregarLibroCarito}>Adquerir</bottom>
             </div>
 
         </div>
