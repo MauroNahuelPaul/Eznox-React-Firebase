@@ -10,7 +10,7 @@ export const LoginContext = createContext()
 
 export const LoginProvider = ({ children }) => {
     const [user, setUser] = useState({
-        id:'',
+        id: '',
         nombre: '',
         apellido: '',
         email: '',
@@ -22,13 +22,14 @@ export const LoginProvider = ({ children }) => {
     })
     const [loading, setLoading] = useState(true)
     const [usuarios, setUsuarios] = useState()
+    const [idUsuarios, SetIdUsuarios] = useState()
 
     useEffect(() => {
         const usuarioRef = collection(db, "usuarios")
         getDocs(usuarioRef)
             .then((res) => {
                 setUsuarios(res.docs.map((doc) => doc.data()))
-                console.log(res.docs.map((doc) => doc))
+                SetIdUsuarios(res.docs.map((doc) => doc.id))
             })
             .finally(() => {
                 setLoading(false)
@@ -39,17 +40,22 @@ export const LoginProvider = ({ children }) => {
 
 
     const login = (values) => {
-        const match = usuarios.find((doc) => doc.data.email === values.email && doc.data.contraseña === values.password)
+        const match = usuarios.find((doc) => doc.email === values.email && doc.contraseña === values.password)
         if (match) {
+            const id = idUsuarios[usuarios.indexOf(match)] 
             setUser({
-                id: match.id,
-                email: match.data.email,
+                id:id,
+                nombre: match.nombre,
+                apellido: match.apellido,
+                email: match.email,
+                contraseña: match.contraseña,
+                confirmarContraseña: match.confirmarContraseña,
+                fechaNacimiento: match.fechaNacimiento,
+                sexo: match.sexo,
                 logged: true
 
             })
-
-
-
+            
         }
         else {
             StartToastifyInstance({

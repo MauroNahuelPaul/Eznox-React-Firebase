@@ -4,16 +4,23 @@ export const DetalleLibro = ({ libro, id }) => {
     }
     return (
         <div className="libroDetalle">
+            <div className="libroInfo">
 
-            <img className="img" src={libro.img} alt={libro.titulo} />
-            <div>
-                <h2 className="titulo">{libro.titulo}</h2>
-                <p className="sinopsis">Sinopsis: {libro.sinopsis}</p>
-                <h3 className="autor">Autor: {libro.autor}</h3>
-                <p className="año">Años: {libro.año}</p>
-                <p className="genero">Genero: {libro.genero}</p>
-                <bottom onClick={ agregarLibroCarito}>Adquerir</bottom>
+                <img className="libroInfo__img" src={`../imgs-portadas/${libro.titulo}.jpg`} alt={libro.titulo} />
+                <div className="libroInfo__datos">
+                    <h2 className="titulo">{libro.titulo}</h2>
+                    <h3 className="autor">Autor: {libro.autor}</h3>
+                    <hr />
+
+                    <p className="año">Fecha de salida: {libro.año}</p>
+                    <p className="genero">Genero: {libro.genero}</p>
+                    <div>
+                        <p className="precio">${libro.precio}</p>
+                        <bottom onClick={agregarLibroCarito}>Adquerir</bottom>
+                    </div>
+                </div>
             </div>
+            <p className="sinopsis">Sinopsis: {libro.sinopsis}</p>
 
         </div>
     )

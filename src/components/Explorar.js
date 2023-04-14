@@ -42,10 +42,10 @@ export const Explorar = () => {
             <div className="genero-container">
                 <Link to='/explorar/' className="genero-select">Todos</Link>
                 <Link to='/explorar/categoria/Romance' className="genero-select">Romance</Link>
-                <Link to='/explorar/categoria/Accion' className="genero-select">Acción</Link>
+                <Link to='/explorar/categoria/Acción' className="genero-select">Acción</Link>
                 <Link to='/explorar/categoria/Aventura' className="genero-select">Aventura</Link>
-                <Link to='/explorar/categoria/Psicologico' className="genero-select">Psicologico</Link>
-                <Link to='/explorar/categoria/Fantasia' className="genero-select">Fantasia</Link>
+                <Link to='/explorar/categoria/Psicológico' className="genero-select">Psicológico</Link>
+                <Link to='/explorar/categoria/Fantasía' className="genero-select">Fantasía</Link>
             </div>
 
             {
