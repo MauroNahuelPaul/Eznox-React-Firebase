@@ -51,9 +51,10 @@ export const LoginProvider = ({ children }) => {
                 contraseña: match.contraseña,
                 confirmarContraseña: match.confirmarContraseña,
                 fechaNacimiento: match.fechaNacimiento,
+                deseados:match.deseados,
+                adqueridos:match.adqueridos,
                 sexo: match.sexo,
                 logged: true
-
             })
             
         }

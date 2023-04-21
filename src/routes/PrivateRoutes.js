@@ -5,6 +5,8 @@ import { DettalleLibroContainer } from "../components/DetalleLibroContainer"
 import Cuenta from "../components/Cuenta"
 import { Nosotros } from "../components/Nosotros"
 import { Footer } from "../components/Footer"
+import Cart from "../components/ListadoCarrito"
+import Wish from "../components/ListadoDeseados"
 
 export const PrivateRoutes = () => {
     return (
@@ -19,6 +21,8 @@ export const PrivateRoutes = () => {
                 <Route path="/cuenta" element={<Cuenta/>} />
                 {/* <Route path="/ayuda" element={}/> */}
                 {/* <Route path="*" element={<Error/>}/> */}
+                <Route path="/wish" element={ <Wish /> }/>
+                <Route path="/cart" element={ <Cart /> }/>
                 <Route path='*' element={<Navigate to={"/"} />} />
             </Routes>
             <Footer/>
