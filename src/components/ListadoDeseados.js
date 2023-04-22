@@ -1,25 +1,34 @@
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { CartContext } from "../context/CartContext"
 import { Link } from "react-router-dom"
 import { LoginContext } from "../context/LoginContext"
 import { db } from "../firebase/config"
 import { doc, getDoc } from "firebase/firestore"
+import { Loader } from "./Loader"
+
+///////////// POR TERMINAR
 
 const Wish = () => {
     const [usuario, setUsuario] = useState(null)
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
+    const [deseados, setDeseados] = useState([])
     const { agregarAlCarrito } = useContext(CartContext)
-    
     const { user } = useContext(LoginContext)
-    //armar una referencia (sync)
 
-    async function cargarLibrosDeseados  () {
-        const userRef = doc(db, "usuarios", user.id);
-        setUsuario(await getDoc(userRef));
-        setLoading(true)
-    }
-    cargarLibrosDeseados()
-
+    useEffect(() => {
+        const usuarioRef = doc(db, "usuarios", user.id)
+        getDoc(usuarioRef)
+            .then((res) => {
+                setDeseados(res.data().deseados)
+                setUsuario(res.data())
+                usuario.deseados=deseados
+                console.log(usuario)
+            })
+            .finally(() => {
+                setLoading(false)
+            })
+    }, [loading])
+    if(usuario!==null){
         if (usuario.deseados.length === 0) {
             return (
                 <div className="">
@@ -30,27 +39,30 @@ const Wish = () => {
                 </div>
             )
         }
+    }  
 
-        return (
-            <div className="">
-                <h2>Tus deseados</h2>
-                <hr />
-                {console.log(usuario.deseados)}
+    return (
+        <div className="">
+            <h2>Tus deseados</h2>
+            <hr />
+            {usuario?console.log(usuario):console.log("foldsmgkso")}
 
-                loading?{
+            {
+                !loading ?
                     usuario.deseados.map(item => (
                         <div>
                             <h4>{item.titulo}</h4>
                             <p>Precio: ${item.precio}</p>
                             <button onClick={agregarAlCarrito(item)}>Adquerir</button>
-                            <button onClick={user.deseados.splice(item)}>Borrar</button>
+                            <button onClick={usuario.deseados.splice(item)}>Borrar</button>
                             <hr />
                         </div>
                     ))
-                }
-                :<loader/>
-            </div>
-        )
-    }
 
-    export default Wish
+                    : <Loader />
+            }
+        </div>
+    )
+}
+
+export default Wish

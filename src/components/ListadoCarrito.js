@@ -23,8 +23,8 @@ const Cart = () => {
         <div className="">
             <h2>Tu compra</h2>
                 <hr/>
-
                 {
+                    
                     cart.map(item => (
                         <div key={item[0]}>
                             <h4>{item[1].titulo}</h4>

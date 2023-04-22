@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.bf4145a1.css",
-    "main.js": "/static/js/main.f093681c.js",
+    "main.js": "/static/js/main.795a3251.js",
     "static/media/librosPila.png": "/static/media/librosPila.a25b4f122679fa03de01.png",
     "static/media/librosPila3.png": "/static/media/librosPila3.25e9fc686d2711247e32.png",
     "static/media/librosPila2.png": "/static/media/librosPila2.483bd4594690fb0a9058.png",
     "static/media/Libro.jpg": "/static/media/Libro.26660c297e1a769084dc.jpg",
     "index.html": "/index.html",
     "main.bf4145a1.css.map": "/static/css/main.bf4145a1.css.map",
-    "main.f093681c.js.map": "/static/js/main.f093681c.js.map"
+    "main.795a3251.js.map": "/static/js/main.795a3251.js.map"
   },
   "entrypoints": [
     "static/css/main.bf4145a1.css",
-    "static/js/main.f093681c.js"
+    "static/js/main.795a3251.js"
   ]
 }

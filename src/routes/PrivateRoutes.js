@@ -7,6 +7,7 @@ import { Nosotros } from "../components/Nosotros"
 import { Footer } from "../components/Footer"
 import Cart from "../components/ListadoCarrito"
 import Wish from "../components/ListadoDeseados"
+import Checkout from "../components/Checkout"
 
 export const PrivateRoutes = () => {
     return (
@@ -21,6 +22,7 @@ export const PrivateRoutes = () => {
                 <Route path="/cuenta" element={<Cuenta/>} />
                 {/* <Route path="/ayuda" element={}/> */}
                 {/* <Route path="*" element={<Error/>}/> */}
+                <Route path="/checkout" element={ <Checkout /> }/>
                 <Route path="/wish" element={ <Wish /> }/>
                 <Route path="/cart" element={ <Cart /> }/>
                 <Route path='*' element={<Navigate to={"/"} />} />
