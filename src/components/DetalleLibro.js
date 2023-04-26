@@ -1,16 +1,43 @@
 import StartToastifyInstance from "toastify-js";
 import { useCartContext } from "../context/CartContext";
-import { LoginContext } from "../context/LoginContext";
-import { useContext } from "react";
-import { doc, setDoc } from "firebase/firestore";
-import { db } from "../firebase/config";
+import { useWishContext } from "../context/WishContext";
+
+
+
 
 export const DetalleLibro = ({ libro, id }) => {
     const { agregarAlCarrito, isInCart } = useCartContext()
-    const { user } = useContext(LoginContext)
-    const agergarLibroDeseados = async () => {
-        user.deseados.push(libro)
-        await setDoc(doc(db, "usuarios", `${user.id}`), {...user})
+    const { agregarAlWishList, isInWish } = useWishContext()
+    const agregarAlWish = () => {
+        if(isInWish(id)){
+            StartToastifyInstance({
+                text: `'${libro.titulo}' ya se encuentra dentro de su listado de deseados`,
+                duration: 3000,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "$primary-color",
+                },
+            }).showToast();
+        }
+        else {
+            
+            agregarAlWishList([id, libro])
+            StartToastifyInstance({
+                text: `Se ha agregado '${libro.titulo}' a tu listado de deseados\nPodras verlo reflejado en cuenta>Lista de deseados`,
+                duration: 3000,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "$primary-color",
+                },
+            }).showToast();
+        }
+        
     }
     const agregarLibroCarito = () => {
         if (isInCart(id)) {
@@ -29,7 +56,7 @@ export const DetalleLibro = ({ libro, id }) => {
         else {
             agregarAlCarrito([id, libro])
             StartToastifyInstance({
-                text: `Se ha agregado '${libro.titulo}' a tu listo de compras\nPodras verlo reflejado en cuenta>carro`,
+                text: `Se ha agregado '${libro.titulo}' a tu listado de compras\nPodras verlo reflejado en cuenta>Lista de compras`,
                 duration: 3000,
                 close: true,
                 gravity: "top", // `top` or `bottom`
@@ -44,6 +71,7 @@ export const DetalleLibro = ({ libro, id }) => {
     }
     return (
         <div className="libroDetalle">
+
             <div className="libroInfo">
 
                 <img className="libroInfo__img" src={`../imgs-portadas/${libro.titulo}.jpg`} alt={libro.titulo} />
@@ -56,7 +84,7 @@ export const DetalleLibro = ({ libro, id }) => {
                     <p className="genero">Genero: {libro.genero}</p>
                     <div>
                         <p className="precio">${libro.precio}</p>
-                        <button onClick={agergarLibroDeseados}>Agregar a la lista de deseados</button>
+                        <button onClick={agregarAlWish}>Agregar a la lista de deseados</button>
                         <bottom onClick={agregarLibroCarito}>Adquerir</bottom>
                     </div>
                 </div>

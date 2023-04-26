@@ -66,8 +66,9 @@ export const CuentaRegister = () => {
                     confirmarContraseña: '',
                     fechaNacimiento: '',
                     sexo: '',
+                    deseados: [],
                     adqueridos: [],
-                    deseados: []
+                    
 
                 }}
                 onSubmit={Registrarse}

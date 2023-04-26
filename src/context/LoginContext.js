@@ -57,6 +57,7 @@ export const LoginProvider = ({ children }) => {
                 logged: true
             })
             
+            
         }
         else {
             StartToastifyInstance({
