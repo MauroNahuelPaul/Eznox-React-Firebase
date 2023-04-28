@@ -57,7 +57,6 @@ const Wish = () => {
         }).showToast();
         removerItemWish(item[0])
         setA(1)
-        
 
     }
     if (user.deseados.length === 0) {

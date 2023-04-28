@@ -2,10 +2,11 @@ import { useContext, useState } from "react"
 import { Link, Navigate } from "react-router-dom"
 import { useCartContext } from "../context/CartContext"
 import { db } from "../firebase/config"
-import { collection, addDoc } from "firebase/firestore"
+import { collection, addDoc, arrayUnion, updateDoc, doc } from "firebase/firestore"
 import { Formik } from "formik"
 import * as Yup from 'yup'
 import { LoginContext } from "../context/LoginContext"
+import { DateTime } from "luxon"
 const schema = Yup.object().shape({
     nombre: Yup.string().min(3, 'Mínimo 3 caracteres').max(30, 'Máximo 30 caracteres').required('Este campo es requerido'),
     direccion: Yup.string().min(4, 'Mínimo 4 caracteres').max(40, 'Máximo 40 caracteres').required('Este campo es requerido'),
@@ -16,16 +17,24 @@ const Checkout = () => {
     const { cart, totalCart, emptycart } = useCartContext()
     const [orderId, setOrderId] = useState(null)
     const { user } = useContext(LoginContext)
-
+    const userAux= user
+    delete userAux.deseados
+    delete userAux.adqueridos
     const createOrder = async (values) => {
-
+        
         const orden = {
-            usuario: user,
+            usuario: userAux,
             cliente: values,
             items: cart.map(item => item[1]),
+            fecha : DateTime.now().toLocaleString(),
             total: totalCart()
         }
         const docRef = await addDoc(collection(db, "ordenes"), orden)
+        const useRef = doc(db, "usuarios", `${user.id}`);
+        cart.map(item => updateDoc(useRef, {
+            adqueridos: arrayUnion({ ...item })
+        }))
+
         setOrderId(docRef.id)
         emptycart()
     }

@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { DetalleLibro } from "./DetalleLibro"
+import { AdqueridoDetalleLibro } from "./AdqueridoDetalleLibro"
 import { doc, getDoc } from "firebase/firestore"
 import { db } from "../firebase/config"
 import { Loader } from "./Loader"
 
 
 
-export const DetalleLibroContainer = () => {
+export const AdqueridoDetalleLibroContainer = () => {
     const [libro, setLibro] = useState(null)
     const [loading, setLoading] = useState(true)
     const { id } = useParams()
@@ -33,7 +33,7 @@ export const DetalleLibroContainer = () => {
             {
                 loading
                     ? <Loader/>
-                    : <DetalleLibro libro={libro} id={id}/>
+                    : <AdqueridoDetalleLibro libro={libro} id={id}/>
             }
         </div>
     )

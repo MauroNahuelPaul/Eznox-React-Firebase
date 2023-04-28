@@ -34,6 +34,7 @@ export const CuentaInfo = () => {
             <p>Fecha de nacimiento:{user.fechaNacimiento}</p>
             <button onClick={logout}>Cerrar sesión</button>
             <button onClick={borrarCuenta}>Borrar Cuenta</button>
+            <Link to="./historialCompras">Hisorial de Compras</Link>
         </div>
     )
 }
