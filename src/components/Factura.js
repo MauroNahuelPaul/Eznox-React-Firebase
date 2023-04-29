@@ -1,9 +1,14 @@
-export const Factura = ({item}) => {
-    return(
-        <div>
-            {/* {console.log(item)} */}
-            <h5>Cantidad items: {item.items.length}</h5>
-            <span>Monto {item.total}</span>
-        </div>
+import { Link } from "react-router-dom"
+
+export const Factura = ({ item }) => {
+    return (
+        <Link to={`./${item.id}`}>
+            <div>
+                <h3>ID: {item.id}</h3>
+                <span>Fecha: {item.data.fecha}</span>
+                <span>Cantidad items: {item.data.items.length}</span>
+                <span>Monto: ${item.data.total}</span>
+            </div>
+        </Link>
     )
 }

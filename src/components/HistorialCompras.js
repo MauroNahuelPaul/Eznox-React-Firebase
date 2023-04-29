@@ -8,18 +8,18 @@ import { Loader } from "./Loader"
 export const HitorialCompras = () => {
     const { user } = useContext(LoginContext)
     const [loading, setLoading] = useState(true)
-    const [idFacturas, setIdFacturas] = useState([])
     const [facturasUser, setFacturasUser] = useState([])
-    const [facturas, setFacturas] = useState([])
     useEffect(() => {
+        let facturasComb = []
         const facturasRef = collection(db, "ordenes")
         getDocs(facturasRef)
             .then((res) => {
-                setFacturas(res.docs.map((doc) => doc.data()))
-                setIdFacturas(res.docs.map((doc) => doc.id))
-                setFacturasUser(facturas.filter(elem => elem.usuario.email == user.email))
-                // setFacturasUser(facturasUser.map((elem,index)=>elem.id=idFacturas[index]))
-
+                let facturas=(res.docs.map((doc) => doc.data()))
+                let idFacturas=(res.docs.map((doc) => doc.id))
+                for (let i = 0; i < facturas.length; i++) {
+                    facturasComb.push({ data:facturas[i], id:idFacturas[i]})
+                }
+                setFacturasUser(facturasComb.filter(elem => elem.data.usuario.email == user.email))
 
             })
             .finally(() => {
@@ -28,7 +28,7 @@ export const HitorialCompras = () => {
     }, [loading])
     return (
         <div>
-            {console.log(facturasUser)}
+            <h1>Historial de compras de {user.nombre}</h1>
             {
                 loading
                     ? <Loader />
