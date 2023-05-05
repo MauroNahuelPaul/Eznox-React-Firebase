@@ -24,17 +24,26 @@ export const CuentaInfo = () => {
     }
 
     return (
-        <div>
-            <h5>Bienvenido: {user.nombre} {user.apellido}</h5>
-            <hr />
-            <Link to="/wish">Lista de deseados</Link>
-            <Link to="/cart">Lista de compras</Link>
-            <p>Email: {user.email}</p>
-            <p>Sexo: {user.sexo}</p>
-            <p>Fecha de nacimiento:{user.fechaNacimiento}</p>
-            <button onClick={logout}>Cerrar sesión</button>
-            <button onClick={borrarCuenta}>Borrar Cuenta</button>
-            <Link to="./historialCompras">Hisorial de Compras</Link>
+        <div className="cuentaInfo">
+            <h5 className="cuentaInfo__nombreUsuario">Bienvenido {user.nombre} {user.apellido}</h5>
+            <div className="cuentaInfo__botones">
+                <Link to="/wish">Lista de deseados</Link>
+                <Link to="/cart">Lista de compras</Link>
+                <Link to="./historialCompras">Hisorial de Compras</Link>
+            </div>
+            <div className="cuentaInfo__info">
+                <h6>Información personal</h6>
+                <p>Email: {user.email}</p>
+                <p>Sexo: {user.sexo}</p>
+                <p>Fecha de nacimiento: {user.fechaNacimiento}</p>
+            </div>
+
+            <div className="cuentaInfo__control">
+                <button onClick={logout}>Cerrar sesión</button>
+                <button onClick={borrarCuenta}>Borrar Cuenta</button>
+            </div>
+
+
         </div>
     )
 }

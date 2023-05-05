@@ -1,92 +1,31 @@
+import { AyudaItem } from "./AyudaItem";
 
 export const Ayuda = () => {
 
     return (
 
-        <main className="bg-main py-5 ayuda-main">
-            <div className="container">
-                <div className=" my-2 border rounded-4 apartado text ">
-                    <h1 className="pt-1 ps-3">CENTRO DE<br />AYUDA</h1>
+        <main className="">
+            <div className="apartado-container">
+                <div className="apartado">
+                    <h1 className="">CENTRO DE<br />AYUDA</h1>
                 </div>
             </div>
+            <div className="ayudaItemsContainer">
+                <AyudaItem titulo="¿Cómo cambio la información de pago?" texto="Únete a una comunidad de millones de usuarios de todo el mundo que disfrutan acceso
+                                ilimitado a contenido de todo el mundo.
+                                Como miembro de Eznox, se te cobrará una vez por mes en la fecha de suscripción. No hay
+                                contratos, cargos por cancelación ni compromisos.
+                                Tienes total libertad para cambiar de
+                                plan o cancelar online cuando quieras si decides que Eznox no es para ti."/>
 
-            <div id="accordion" class="myaccordion">
-                <div class="card">
-                    <div class="card-header" id="headingOne">
-                        <h2 class="mb-0">
-                            <button class="d-flex align-items-center justify-content-between btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                Undergraduate Studies
-                                <span class="fa-stack fa-sm">
-                                    <i class="fas fa-circle fa-stack-2x"></i>
-                                    <i class="fas fa-plus fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                        <div class="card-body">
-                            <ul>
-                                <li>Computer Science</li>
-                                <li>Economics</li>
-                                <li>Sociology</li>
-                                <li>Nursing</li>
-                                <li>English</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" id="headingTwo">
-                        <h2 class="mb-0">
-                            <button class="d-flex align-items-center justify-content-between btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Postgraduate Studies
-                                <span class="fa-stack fa-2x">
-                                    <i class="fas fa-circle fa-stack-2x"></i>
-                                    <i class="fas fa-plus fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                        <div class="card-body">
-                            <ul>
-                                <li>Informatics</li>
-                                <li>Mathematics</li>
-                                <li>Greek</li>
-                                <li>Biostatistics</li>
-                                <li>English</li>
-                                <li>Nursing</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" id="headingThree">
-                        <h2 class="mb-0">
-                            <button class="d-flex align-items-center justify-content-between btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Research
-                                <span class="fa-stack fa-2x">
-                                    <i class="fas fa-circle fa-stack-2x"></i>
-                                    <i class="fas fa-plus fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </button>
-                        </h2>
-                    </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                        <div class="card-body">
-                            <ul>
-                                <li>Astrophysics</li>
-                                <li>Informatics</li>
-                                <li>Criminology</li>
-                                <li>Economics</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <AyudaItem titulo="Planes y precios" texto="Eznox ofrece un único plan que te permitirá acceder a todo el contenido.
+                                
+                                Como miembro de Eznox, se te cobrará una vez por mes en la fecha de suscripción."/>
+                <AyudaItem titulo="Cómo descargar títulos para ver offline" texto="Para poder leer offline cuando lo desees, descárgalas de la app de
+                                Eznox.
+                                Para descargar contenido de Eznox, necesitas tener instalada la versión más reciente
+                                de la aplicación en cualquier dispositivo."/>
             </div>
-
-
-
         </main>
 
 

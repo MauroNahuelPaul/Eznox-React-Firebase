@@ -1,39 +1,33 @@
-body {
-    background: #F9F9F9;
+.ayudaItemsContainer{
+    margin: 90px auto;
+    width: 1320px;
+    .ayudaItem {
+        margin-bottom: 50px;
+        .ayudaItem__titulo {
+            padding: 15px;
+            background-color: $primary-color;
+            color: $font-color;
+            font-family: $secondary-font-style;
+            font-size: 2rem;
+            border-radius: 20px;
+            font-weight: 100;
+        }
+        .ayudaItem__Texto {
+            margin: 0 auto;
+            width: 1265px;
+            background-color: $tercer-color;
+            border-radius: 0px 0px 20px 20px;
+            border-bottom: 2px;
+            
+            >p{
+                font-family: $secondary-font-style;
+                color: black;
+                font-size: 1.5rem;
+                font-weight: 100;
+                padding: 30px;
+            }
+    
+        }
+    }
 }
 
-.myaccordion {
-    max-width: 500px;
-    margin: 50px auto;
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
-}
-
-.myaccordion .card,
-.myaccordion .card:last-child .card-header {
-    border: none;
-}
-
-.myaccordion .card-header {
-    border-bottom-color: #EDEFF0;
-    background: transparent;
-}
-
-.myaccordion .fa-stack {
-    font-size: 18px;
-}
-
-.myaccordion .btn {
-    width: 100%;
-    font-weight: bold;
-    color: #004987;
-    padding: 0;
-}
-
-.myaccordion .btn-link:hover,
-.myaccordion .btn-link:focus {
-    text-decoration: none;
-}
-
-.myaccordion li+li {
-    margin-top: 10px;
-}

@@ -17,6 +17,7 @@
         }
 
         >.libroInfo__datos {
+            font-family: $secondary-font-style;
             >.titulo {
                 font-size: 3rem;
                 text-align: center;
@@ -31,8 +32,6 @@
                 font-weight: 400;
             }
 
-
-
             >.año {
                 margin-top: 40px;
                 font-size: 2rem;
@@ -45,22 +44,25 @@
             }
 
             div {
+                align-items: center;
                 display: flex;
                 justify-content: space-between;
                 >.precio {
                     font-size: 2rem;
                 }
 
-                >bottom {
-                    font-size: 2rem;
+                >button{
+                    font-size: 1.25rem;
                     padding: 10px;
                     border-radius: 15px;
                     background-color: $primary-color;
+                    color: white;
                     transition: 0.5s;
                     border: 2px solid white;
 
                     &:hover {
                         background-color: $tercer-color;
+                        color: black;
                         cursor: pointer;
                     }
                 }
@@ -70,6 +72,7 @@
     }
 
     >.sinopsis {
+        margin-top: 40px;
         font-size: 1.7rem;
     }
 }

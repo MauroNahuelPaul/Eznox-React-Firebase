@@ -25,14 +25,16 @@ export const Adqueridos = () => {
         <main className="mainExplorar">
             <div className="apartado-container">
                 <div className="apartado">
-                    <h1 className="">biblioteca</h1>
+                    <h1 className="">Biblioteca</h1>
                 </div>
             </div>
 
             {
                 loading
                     ? <Loader />
-                    : libros.map((libro) => <AdqueridoLibro key={libro[0]} libro={libro[1]} id={libro[0]} />)
+                    : <div className="librosContainer">
+                        {libros.map((libro) => <AdqueridoLibro key={libro[0]} libro={libro[1]} id={libro[0]} />)}
+                    </div>
             }
 
         </main>

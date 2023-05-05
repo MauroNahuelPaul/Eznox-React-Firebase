@@ -72,17 +72,20 @@ const Wish = () => {
 
     return (
         <div className="">
-            <h2>Tus deseados</h2>
-            <hr />
+            <div className="apartado-container">
+                <div className="apartado">
+                    <h1 className="">Tus deseados</h1>
+                </div>
+            </div>
 
             {
                 user.deseados.map(item => (
-                    <div key={item[0]}>
-                        <h4>{item[1].titulo}</h4>
-                        <p>Precio: ${item[1].precio}</p>
-                        <bottom onClick={() => agregarLibroCarito(item[0], item[1])}>Adquerir</bottom>
-                        <button onClick={() => borraElemento(item)}>Borrar</button>
-                        <hr />
+                    <div key={item[0]} className="item">
+                        <h4 className="item__titulo">{item[1].titulo}</h4>
+                        <p className="item__autor">Autor: {item[1].autor}</p>
+                        <p className="item__precio">Precio: ${item[1].precio}</p>
+                        <bottom className="item__boton" onClick={() => agregarLibroCarito(item[0], item[1])}>Adquerir</bottom>
+                        <button className="item__boton" onClick={() => borraElemento(item)}>Borrar</button>
                     </div>
                 ))
             }

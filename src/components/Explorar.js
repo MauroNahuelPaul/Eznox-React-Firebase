@@ -39,6 +39,7 @@ export const Explorar = () => {
                     <h1 className="">EXPLORAR</h1>
                 </div>
             </div>
+            
             <div className="genero-container">
                 <Link to='/explorar/' className="genero-select">Todos</Link>
                 <Link to='/explorar/categoria/Romance' className="genero-select">Romance</Link>

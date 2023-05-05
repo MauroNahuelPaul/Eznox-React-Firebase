@@ -1,6 +1,5 @@
 import { useContext } from "react"
 import { CartContext } from "../context/CartContext"
-import { FaTrashAlt } from "react-icons/fa"
 import { Link } from "react-router-dom"
 
 const Cart = () => {
@@ -12,7 +11,7 @@ const Cart = () => {
         return (
             <div className="">
                 <h2>Tu carrito está vacío</h2>
-                <hr/>
+                <hr />
                 <p>Andá a comprar algo</p>
                 <Link to="/explorar" className="">Volver</Link>
             </div>
@@ -21,23 +20,26 @@ const Cart = () => {
 
     return (
         <div className="">
-            <h2>Tu compra</h2>
-                <hr/>
-                {   
-                    cart.map(item => (
-                        <div key={item[0]}>
-                            <h4>{item[1].titulo}</h4>
-                            <p>Precio: ${item[1].precio}</p>
-                            <button onClick={() => removerItem(item[0])}><FaTrashAlt /></button>
-                            <hr/>
-                        </div>
-                    ))
-                }
-
-                <h4>Total: ${ totalCart() }</h4>
-            
-            <button className="" onClick={emptycart}>Vaciar carrito</button>
-            <Link className="" to="/checkout">Terminar mi compra</Link>
+            <div className="apartado-container">
+                <div className="apartado">
+                    <h1 className="">Tu compra</h1>
+                </div>
+            </div>
+            {
+                cart.map(item => (
+                    <div className="item" key={item[0]}>
+                        <h4 className="item__titulo">{item[1].titulo}</h4>
+                        <p className="item__autor">Autor: {item[1].autor}</p>
+                        <p className="item__precio">Precio: ${item[1].precio}</p>
+                        <button className="item__boton" onClick={() => removerItem(item[0])}>Borrar</button>
+                    </div>
+                ))
+            }
+            <div className="detalleCarrito">
+                <h4 className="detalleCarrito__total">Total: ${totalCart()}</h4>
+                <button className="detalleCarrito__boton" onClick={emptycart}>Vaciar carrito</button>
+                <Link className="detalleCarrito__boton" to="/checkout">Terminar mi compra</Link>
+            </div>
         </div>
     )
 }

@@ -30,7 +30,7 @@ export const AdqueridoDetalleLibro = ({ libro }) => {
                     <p className="genero">Genero: {libro.genero}</p>
                     <div>
                         <p className="precio">${libro.precio}</p>
-                        <bottom onClick={agregarLibroCarito}>Leer</bottom>
+                        <button onClick={agregarLibroCarito}>Leer</button>
                     </div>
                 </div>
             </div>

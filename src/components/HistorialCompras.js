@@ -28,7 +28,11 @@ export const HitorialCompras = () => {
     }, [loading])
     return (
         <div>
-            <h1>Historial de compras de {user.nombre}</h1>
+            <div className="apartado-container">
+                <div className="apartado">
+                    <h1 className="">Historial de compras de {user.nombre}</h1>
+                </div>
+            </div>
             {
                 loading
                     ? <Loader />
