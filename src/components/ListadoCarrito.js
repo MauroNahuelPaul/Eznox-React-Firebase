@@ -9,11 +9,12 @@ const Cart = () => {
 
     if (cart.length === 0) {
         return (
-            <div className="">
-                <h2>Tu carrito está vacío</h2>
+            <div className="arrayVacio">
+                <h2 className="arrayVacio__titulo">Tu carrito está vacío</h2>
                 <hr />
-                <p>Andá a comprar algo</p>
-                <Link to="/explorar" className="">Volver</Link>
+                <p className="arrayVacio__texto">Andá a buscar algo de tu agrado</p>
+                <Link className="arrayVacio__boton" to="/explorar">Volver</Link>
+
             </div>
         )
     }

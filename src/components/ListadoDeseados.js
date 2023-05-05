@@ -61,11 +61,11 @@ const Wish = () => {
     }
     if (user.deseados.length === 0) {
         return (
-            <div className="">
-                <h2>Tu lista de deseados está vacío</h2>
+            <div className="arrayVacio">
+                <h2 className="arrayVacio__titulo">Tu lista de deseados está vacío</h2>
                 <hr />
-                <p>Ve a buscar algo que te guste</p>
-                <Link to="/explorar" className="">Volver</Link>
+                <p className="arrayVacio__texto">Ve a buscar algo que te guste</p>
+                <Link className="arrayVacio__boton" to="/explorar">Volver</Link>
             </div>
         )
     }
@@ -84,7 +84,7 @@ const Wish = () => {
                         <h4 className="item__titulo">{item[1].titulo}</h4>
                         <p className="item__autor">Autor: {item[1].autor}</p>
                         <p className="item__precio">Precio: ${item[1].precio}</p>
-                        <bottom className="item__boton" onClick={() => agregarLibroCarito(item[0], item[1])}>Adquerir</bottom>
+                        <bottom className="item__boton" onClick={() => agregarLibroCarito(item[0], item[1])}>Comprar</bottom>
                         <button className="item__boton" onClick={() => borraElemento(item)}>Borrar</button>
                     </div>
                 ))

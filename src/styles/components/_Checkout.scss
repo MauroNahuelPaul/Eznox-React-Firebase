@@ -1,0 +1,43 @@
+.checkout {
+    width: 1300px;
+    margin: 0 auto;
+
+    &-Form {
+        display: grid;
+
+        &__input {
+            margin: 20px auto;
+            width: 50%;
+            height: 45px;
+            font-size: 1.15rem;
+            text-align: center;
+            font-family: $secondary-font-style;
+
+            &:focus {
+                transition: 0.5s;
+                outline: none;
+                background-color: $primary-color;
+                color: white;
+            }
+        }
+        >p{
+            margin: 0 auto;
+            color:red;
+        }
+        &__boton{
+            margin: 45px auto;
+            width: 150px;
+            height: 45px;
+            font-size: 1.25rem;
+            font-family: $primary-font-style;
+            font-weight: 200;
+
+            &:hover {
+                background-color: $primary-color;
+                transition: 1s;
+                color: white;
+            }
+        }
+    }
+
+}

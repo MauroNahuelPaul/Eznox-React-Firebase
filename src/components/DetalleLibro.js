@@ -85,7 +85,7 @@ export const DetalleLibro = ({ libro, id }) => {
                     <div>
                         <p className="precio">${libro.precio}</p>
                         <button onClick={agregarAlWish}>Agregar a la lista de deseados</button>
-                        <button onClick={agregarLibroCarito}>Adquerir</button>
+                        <button onClick={agregarLibroCarito}>Comprar</button>
                     </div>
                 </div>
             </div>

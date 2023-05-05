@@ -4,23 +4,26 @@
     margin-top: 40px;
 
     justify-content: space-around;
-    
+
 
     >img {
         width: 300px;
         height: 450px;
         border: 2px solid white;
         transition: 0.5s;
+
         &:hover {
             border: 5px solid $primary-color;
         }
     }
 
-    
-
-    >h3 {
+    >div {
         position: absolute;
-
+        color: white;
+        display: flex;
+        justify-content: space-around;
+        width: 300px;
+        margin: 0 auto;
     }
 
 }

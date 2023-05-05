@@ -59,9 +59,12 @@ const Checkout = () => {
     }
 
     return (
-        <div className="container my-5">
-            <h2>Terminar mi compra</h2>
-            <hr />
+        <div className="checkout">
+            <div className="apartado-container">
+                <div className="apartado">
+                    <h1 className="">Termina tu compra</h1>
+                </div>
+            </div>
 
             <Formik
                 initialValues={{
@@ -78,9 +81,9 @@ const Checkout = () => {
                 {({
                     values, handleChange, handleSubmit, errors
                 }) => (
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit} className="checkout-Form">
                         <input
-                            className=""
+                            className="checkout-Form__input"
                             onChange={handleChange}
                             type="text"
                             name="nombre"
@@ -88,7 +91,7 @@ const Checkout = () => {
                             placeholder="Nombre"
                         />
                         {errors.apellido && <p>{errors.apellido}</p>}<input
-                            className=""
+                            className="checkout-Form__input"
                             onChange={handleChange}
                             type="text"
                             name="apellido"
@@ -98,7 +101,7 @@ const Checkout = () => {
                         {errors.apellido && <p>{errors.apellido}</p>}
 
                         <input
-                            className=""
+                            className="checkout-Form__input"
                             onChange={handleChange}
                             type="text"
                             name="direccion"
@@ -107,7 +110,7 @@ const Checkout = () => {
                         />
                         {errors.direccion && <p>{errors.direccion}</p>}
                         <input
-                            className=""
+                            className="checkout-Form__input"
                             onChange={handleChange}
                             type="text"
                             name="codigoPostal"
@@ -117,7 +120,7 @@ const Checkout = () => {
                         {errors.codigoPostal && <p>{errors.codigoPostal}</p>}
 
                         <input
-                            className=""
+                            className="checkout-Form__input"
                             onChange={handleChange}
                             type="email"
                             name="email"
@@ -126,7 +129,7 @@ const Checkout = () => {
                         />
                         {errors.email && <p>{errors.email}</p>}
 
-                        <button className="" type="submit">Enviar</button>
+                        <button className="checkout-Form__boton" type="submit">Enviar</button>
                     </form>
                 )}
             </Formik>

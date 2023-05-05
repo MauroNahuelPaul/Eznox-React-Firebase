@@ -4,6 +4,7 @@ import { LoginContext } from "../context/LoginContext"
 import { useContext, useEffect, useState } from "react"
 import { Loader } from "./Loader"
 import { AdqueridoLibro } from "./AdqueridoLibro"
+import { Link } from "react-router-dom"
 
 export const Adqueridos = () => {
     const { user } = useContext(LoginContext)
@@ -25,16 +26,23 @@ export const Adqueridos = () => {
         <main className="mainExplorar">
             <div className="apartado-container">
                 <div className="apartado">
-                    <h1 className="">Biblioteca</h1>
+                    <h1 className="">BIBLIOTECA</h1>
                 </div>
             </div>
 
             {
                 loading
                     ? <Loader />
-                    : <div className="librosContainer">
-                        {libros.map((libro) => <AdqueridoLibro key={libro[0]} libro={libro[1]} id={libro[0]} />)}
-                    </div>
+                    : libros.length > 0
+                        ? <div className="librosContainer">
+                            {libros.map((libro) => <AdqueridoLibro key={libro[0]} libro={libro[1]} id={libro[0]} />)}
+                        </div>
+                        : <div className="arrayVacio">
+                            <h2 className="arrayVacio__titulo">Tu biblioteca está vacío</h2>
+                            <hr />
+                            <p className="arrayVacio__texto">Ve a comprar algo</p>
+                            <Link className="arrayVacio__boton" to="/explorar">Volver</Link>
+                        </div>
             }
 
         </main>

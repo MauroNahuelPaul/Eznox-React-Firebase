@@ -29,7 +29,7 @@ export const CuentaInfo = () => {
             <div className="cuentaInfo__botones">
                 <Link to="/wish">Lista de deseados</Link>
                 <Link to="/cart">Lista de compras</Link>
-                <Link to="./historialCompras">Hisorial de Compras</Link>
+                <Link to="./historialCompras">Historial de Compras</Link>
             </div>
             <div className="cuentaInfo__info">
                 <h6>Información personal</h6>

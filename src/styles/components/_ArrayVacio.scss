@@ -1,0 +1,37 @@
+.arrayVacio{
+    width: 1300px;
+    margin: 100px auto 40vh;
+    &__titulo{
+        font-size: 2.5rem;
+        font-family: $secondary-font-style;
+        font-weight: 100;
+        color: #FFFFFF;
+    }
+    &__texto{
+        font-size: 1.5rem;
+        font-family: $secondary-font-style;
+        margin:50px 0px 50px;
+        color: white;
+    }
+    &__boton {
+        margin-top: 60px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+        padding: 10px;
+        border-radius: 15px;
+        font-family: $secondary-font-style;
+        font-weight: 100;
+        background-color: $primary-color;
+        transition: 0.5s;
+        color: white;
+        border: 2px solid white;
+
+        &:hover {
+            background-color: $tercer-color;
+            color: black;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+    }
+}
